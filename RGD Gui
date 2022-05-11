@@ -352,15 +352,15 @@ KillDroids.TextSize = 14.000
 KillDroids.TextStrokeTransparency = 0.000
 KillDroids.TextWrapped = true
 KillDroids.MouseButton1Click:Connect(function()
-	setsimulationradius(math.huge,math.huge)
+setsimulationradius(math.huge,math.huge)
 
-	while wait() do
-		for i,v in pairs(game.Workspace:GetDescendants()) do
-			if v:IsA("Humanoid") and v.Parent.Name ~= game.Players.LocalPlayer.Name then
-				v.Health = 0
-			end
-		end
-	end
+
+
+ for i,v in pairs(game.Workspace.Room.Enemies:GetDescendants()) do
+     if v:IsA("Humanoid") and v.Parent.Name ~= game.Players.LocalPlayer.Name then
+         v.Health = 0
+     end
+ end
 end)
 
 UICorner_10.CornerRadius = UDim.new(0, 5)
